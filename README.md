@@ -15,6 +15,7 @@ includes the following sensors:
 * Analog MEMS microphone
 
 [Schematic PDF](Project%20Outputs%20for%20Capybara/CapybaraSchematic.PDF)
+
 [Gerber and Drill files](Project%20Outputs%20for%20Capybara/capybara-v2-0-gerber)
 
 Please contact us if you are interested in blank or assembled PCB boards.
