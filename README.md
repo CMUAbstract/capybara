@@ -16,6 +16,6 @@ includes the following sensors:
 
 [Schematic PDF](Project%20Outputs%20for%20Capybara/CapybaraSchematic.PDF)
 
-[Gerber and Drill files](Project%20Outputs%20for%20Capybara/capybara-v2-0-gerber)
+[Gerber and Drill files](Project%20Outputs%20for%20Capybara/capybara-v2-gerber)
 
 Please contact us if you are interested in blank or assembled PCB boards.
