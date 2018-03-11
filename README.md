@@ -4,7 +4,7 @@ Capybara is an energy-harvesting sensor node that runs on solar panels or RF
 energy (from 915MHz RFID transmitters), and features a power system with
 reconfigurable energy storage for provisioning energy bursts on demand
 ([details and link to
-paper](https://github.com/CMUAbstract/releases/Capybara.md)). The board
+paper](https://github.com/CMUAbstract/releases/blob/master/Capybara.md)). The board
 includes the following sensors:
 
 * IMU: LSM6DS3
