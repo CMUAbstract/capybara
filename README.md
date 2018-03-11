@@ -18,4 +18,6 @@ includes the following sensors:
 
 [Gerber and Drill files](Project%20Outputs%20for%20Capybara/capybara-v2-gerber)
 
+[BOM](Project%20Outputs%20for%20Capybara/BOM-v2-0.xls)
+
 Please contact us if you are interested in blank or assembled PCB boards.
