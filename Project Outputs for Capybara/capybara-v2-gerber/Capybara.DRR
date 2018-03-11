@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Capybara.PcbDoc   3/10/2018  11:11:14 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Capybara.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      15mil (0.381mm)                                           Round             211       PTH        24.35inch (618.40mm)
+T2      22mil (0.559mm)                                           Round             10        PTH        1.38inch (35.06mm)
+T3      24mil (0.6mm)           +/-2mil (0.05mm)                  Round             10        PTH        0.45inch (11.43mm)
+T4      24mil (0.6mm)                                             Round             58        PTH        7.80inch (198.07mm)
+T5      24mil (0.61mm)                                            Round             52        PTH        4.01inch (101.75mm)
+T6      33mil (0.838mm)                                           Round             5         PTH        0.34inch (8.67mm)
+T7      125mil (3.175mm)                                          Round             6         NPTH       7.61inch (193.24mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              352
+
+Total Processing Time (hh:mm:ss) : 00:00:01

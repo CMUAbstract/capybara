@@ -1,0 +1,11 @@
+DRC Rules Export File for PCB: Z:\capybara-hw\Capybara_v1.3\Capybara_v1.2\Capybara_recon--v1.1-fab\Capybara_recon-BOM-95percent\Capybara_recon-BOM-95percent\Capybara_recon\Capybara.PcbDoc
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=8.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance~Sunstone Circuits|Scope=Board|Minimum=6.00
+RuleKind=Width|RuleName=Width~Sunstone Circuits|Scope=Board|Minimum=6.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion~Sunstone Circuits|Scope=Board|Minimum=3.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit~Sunstone Circuits|Scope=Board|Allowed=0
+RuleKind=MinimumAnnularRing|RuleName=MinimumAnnularRing~Sunstone Circuits|Scope=Board|Minimum=5.00
+RuleKind=Clearance|RuleName=Clearance_keepout|Scope=Board|Minimum=0.00
