@@ -40,7 +40,29 @@ Q16 and R16 not needed for Design A (normally closed).
 
 Why P11 (external harvester) male?
 
+V3
+---
 
-Fiducial on bottom
+quick layout fixes:
+* Fiducial on bottom
+* Remove two 90 degree turns in BLE RF trace
+* move ARM JTAG header to the right (towards edge)
+* move RF harvester layout downwards (for access to tuning L, C)
 
-Remove U28 charge pump after adding runtime configurable output voltage from the output booster.
+fix:
+* zero-ohm on Vbank input to VarTh
+* level-shifting FET+R on Vvarth_en to shift from divided Vbank to full Vbank
+
+improvement:
+* (potentially) p-FET between latch cap and gate to have enough time to charge the latch cap (when enabling empty banks)
+
+features:
+* configurable Vout (2io to analog switch connected to a resistor network?)
+** remove U28 charge pump after adding runtime configurable output voltage from the output booster.
+* external supervisor for deep discharge (1int pin)
+* external Vbottom (i2c+1int) [seems to not have any advantage over using internal comparator]
+* radio as I2C slave
+* [MAJOR] free up one whole port for camera
+** change EDB SW to work with 3 pins
+** move analog inputs to former EDB aux pins
+** add GPIO expander for power system
