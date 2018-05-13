@@ -11,7 +11,7 @@ D25 (VBANK->VSTOR) seems to not make any difference.
 Remove TPS22943: it burns massive amounts of current (~130mA for over 1ms),
 and keeps burning more as you give more cap on the input of TPS61200.
 Everything works without TPS22943.
-** TODO: confirm that sensors (particularly, APDS) turn on without killing Vout and operate fine, without TPS22943. 
+** TODO: confirm that sensors (particularly, APDS) turn on without killing Vout and operate fine, without TPS22943.
 
 I think TPS61200 is leaking more than the speced 0.5-2uA. Perhaps
 the spec is for when the part is powered but EN=low, not for when
@@ -20,10 +20,7 @@ Vin is low (like 0.6V).
 Double-start issue, i.e. stray shutdown
 change R86 to 1M (still seeing very rare stray shutdown, so perhaps, change C54 to 0.01uF)
 
-v3: include WISP chargepump: S-8823A instead of BQ (as an option)
-because BQ cold start is awefully inefficient, especially for RF harvester,
-causing the coldstart mode to take 30s+ (under max power) and indefinitely
-long for anything weaker.
+
 
 Find miniumum Cout cap for BQ25504. Datasheet says 100uF, so that is what we
 use, but it is very very likely that it will work just fine with a much much
@@ -55,6 +52,11 @@ fix:
 
 improvement:
 * (potentially) p-FET between latch cap and gate to have enough time to charge the latch cap (when enabling empty banks)
+* include WISP chargepump: S-8823A instead of BQ (as an option)
+because BQ cold start is awefully inefficient, especially for RF harvester,
+causing the coldstart mode to take 30s+ (under max power) and indefinitely
+long for anything weaker.
+
 
 features:
 * configurable Vout (2io to analog switch connected to a resistor network?)
