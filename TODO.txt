@@ -1,0 +1,46 @@
+P1L should go to VBANK instead of VCAP_IN
+
+BQ VBAT_OK range: 2.5-2.537
+R70=100k
+R71=3.3M
+
+Deep discharge:
+1.6-1.75v doesn't prevent BQ from entering cold start occassionally,
+but 1.8v seems reliable.
+
+D25 (VBANK->VSTOR) seems to not make any difference.
+
+Remove TPS22943: it burns massive amounts of current (~130mA for over 1ms),
+and keeps burning more as you give more cap on the input of TPS61200.
+Everything works without TPS22943.
+
+I think TPS61200 is leaking more than the speced 0.5-2uA. Perhaps
+the spec is for when the part is powered but EN=low, not for when
+Vin is low (like 0.6V).
+
+Double-start issue, i.e. stray shutdown
+change R86 to 1M (still seeing very rare stray shutdown, so perhaps, change C54 to 0.01uF)
+
+v3: include WISP chargepump: S-8823A instead of BQ (as an option)
+because BQ cold start is awefully inefficient, especially for RF harvester,
+causing the coldstart mode to take 30s+ (under max power) and indefinitely
+long for anything weaker.
+
+Find miniumum Cout cap for BQ25504. Datasheet says 100uF, so that is what we
+use, but it is very very likely that it will work just fine with a much much
+smaller cap, shrinking the cold start time (with BQ bypass enabled) by a lot.
+
+Bank switches:
+R=20M to 50M across the latch cap to compensate for leakage into the latch cap through Q4. This leakage causes the
+latch cap to charge, even when we want it to stay low (i.e. switch close in NC config).
+R8 (replenishment Q4 gate pullup): 1M->100k, to decrease leakage through Q4 (not confirmed that this makes a significant difference)
+R4 (replenishment limiter): 47k->10k, because otherwise replenishment is too much for the leakage compensation
+
+Q16 and R16 not needed for Design A (normally closed).
+
+Why P11 (external harvester) male?
+
+
+Fiducial on bottom
+
+Remove U28 charge pump after adding runtime configurable output voltage from the output booster.

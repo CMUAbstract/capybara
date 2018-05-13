@@ -1,0 +1,31 @@
+No BQ bypass configuration:
+Can use internal supervisor inside BQ (VBAT_OK) for BOOST_EN signal
+populate R73
+unpopulate R60
+
+optionally for VBANK_OK signal for the MCU populate either:
+   to use the supervisor as the source of the signal: populate R63 and R62,  unpopulate R61
+   to use the VBAT_OK as the source of the signal: populate R61, unpopulate R63, R62.
+
+
+
+With BQ bypass, CANNOT use the internal (VBAT_OK) for BOOST_EN signal,
+because during the bypass BQ output is disconnected from the main cap,
+so it will reach top voltage, and VBAT_OK will go high, BEFORE the
+main cap bank charges.
+
+
+
+
+Tested cap config:
+Output of output booster (C51,C52,C53): none
+Input of output booster (C44,C45): 100uF     (ceramic)
+Bank0-internal (C30,C31,C29): 200uF=2x 100uF (ceramic)
+Bank0 (C1,C2): none
+
+Tested config:
+Use U9 (BU49) supervisor for ON trigger: works  (config chosen, i.e. last tested)
+Use VBAT_OK interal supervisor in BQ for ON trigger: works
+
+
+Issue: zigzag in VDD -- possibly due to the failed-start problem (tune C54,R86 on gate of shutdown FET Q26).
