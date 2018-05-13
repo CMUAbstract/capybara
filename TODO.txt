@@ -1,5 +1,3 @@
-P1L should go to VBANK instead of VCAP_IN
-
 BQ VBAT_OK range: 2.5-2.537
 R70=100k
 R71=3.3M
@@ -13,6 +11,7 @@ D25 (VBANK->VSTOR) seems to not make any difference.
 Remove TPS22943: it burns massive amounts of current (~130mA for over 1ms),
 and keeps burning more as you give more cap on the input of TPS61200.
 Everything works without TPS22943.
+** TODO: confirm that sensors (particularly, APDS) turn on without killing Vout and operate fine, without TPS22943. 
 
 I think TPS61200 is leaking more than the speced 0.5-2uA. Perhaps
 the spec is for when the part is powered but EN=low, not for when
@@ -50,6 +49,7 @@ quick layout fixes:
 * move RF harvester layout downwards (for access to tuning L, C)
 
 fix:
+* P1L should go to VBANK instead of VCAP_IN
 * zero-ohm on Vbank input to VarTh
 * level-shifting FET+R on Vvarth_en to shift from divided Vbank to full Vbank
 
